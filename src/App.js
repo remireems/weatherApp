@@ -7,7 +7,18 @@ function App() {
 
   return (
     <div className="app">
-      hello
+      <div>
+        <input 
+        type="text" 
+        placeholder="Search city"
+        />
+      </div>
+      <div>
+        <h1>Rowland Heights</h1>
+      <h2>10F</h2>
+      <h2>Sunny</h2>
+      </div>
+      
     </div>
   );
 }
