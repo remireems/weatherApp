@@ -10,16 +10,17 @@ function App() {
 
   return (
     <div className="app">
-      <div>
+      <div className='searchBar'>
         <input
           type="text"
           placeholder="Search city"
         />
       </div>
-      <div> 
+      <div className='weatherInfo'> 
         <h1>Rowland Heights</h1>
-        <h2>10F</h2>
+        
         <h2>Sunny</h2>
+        <h2>10F</h2>
       </div>
 
     </div>
