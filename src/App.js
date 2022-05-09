@@ -1,12 +1,37 @@
 import { useState } from 'react'
-
+import axios from 'axios';
 
 function App() {
 
-  const api = {
-    key: '04a3de3d38e1f0efbd3cb73d312aa4b6',
-    url: 'api.openweathermap.org/data/2.5/forecast/'
+  const [data, setData] = useState({})
+  const [location, setLocation] = useState('')
+
+  const apiKey = '04a3de3d38e1f0efbd3cb73d312aa4b6'
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${apiKey}`
+
+  const searchWeather = event => {
+    if (event.key === 'Enter') {
+      axios.get(url)
+        .then(res => {
+          setData(res.data)
+          console.log(res.data)
+          setLocation('')
+        })
+
+    }
   }
+
+  // const weatherIcons = (data.weather[0].main) => {
+  //   switch (key) {
+  //     case value:
+
+  //       break;
+
+  //     default:
+  //       break;
+  //   }
+  // }
+
 
   return (
     <div className="app">
@@ -14,13 +39,19 @@ function App() {
         <input
           type="text"
           placeholder="Search city"
+          value={location}
+          onChange={event => setLocation(event.target.value)}
+          onKeyPress={searchWeather}
         />
+
       </div>
-      <div className='weatherInfo'> 
-        <h1>Rowland Heights</h1>
-        
-        <h2>Sunny</h2>
-        <h2>10F</h2>
+      <div className='weatherInfo'>
+        <h1>{data.name}</h1>
+        {data.main ? <h2>{data.main.temp.toFixed()}°F</h2> : null}
+
+        {data.weather ? <h2>{data.weather[0].main}</h2> : null}
+
+
       </div>
 
     </div>
