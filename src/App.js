@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import axios from 'axios'
-import WTable from './Components/WTable/WTable'
 
 function App() {
 
@@ -18,7 +17,6 @@ function App() {
           console.log(res.data)
           setLocation('')
         })
-
     }
   }
 
@@ -33,21 +31,17 @@ function App() {
           onChange={event => setLocation(event.target.value)}
           onKeyPress={searchWeather}
         />
-
       </div>
 
       <div className='weatherInfo'>
         <h1>{data.name}</h1>
-
         {data.weather ? <img src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} alt={data.weather[0].main} /> : null}
         {data.weather ? <h2>{data.weather[0].main}</h2> : null}
         {data.main ? <h2>{data.main.temp.toFixed()}°F</h2> : null}
-
       </div>
-
-      <WTable />
+  
     </div>
   );
 }
 
-export default App;
+export default App

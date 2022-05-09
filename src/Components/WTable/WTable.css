@@ -1,0 +1,16 @@
+.tableCont {
+  display: flex;
+  /* height: 100%; */
+  justify-content: center;
+  color: black;
+  bottom: 0;
+}
+
+
+
+/* .weaTb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
