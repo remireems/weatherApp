@@ -21,17 +21,6 @@ function App() {
     }
   }
 
-  // const weatherIcons = (data.weather[0].main) => {
-  //   switch (key) {
-  //     case value:
-
-  //       break;
-
-  //     default:
-  //       break;
-  //   }
-  // }
-
 
   return (
     <div className="app">
@@ -45,12 +34,13 @@ function App() {
         />
 
       </div>
+      
       <div className='weatherInfo'>
         <h1>{data.name}</h1>
-        {data.main ? <h2>{data.main.temp.toFixed()}°F</h2> : null}
 
+        {data.weather ? <img src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} alt={data.weather[0].main} /> : null}
         {data.weather ? <h2>{data.weather[0].main}</h2> : null}
-
+        {data.main ? <h2>{data.main.temp.toFixed()}°F</h2> : null}
 
       </div>
 
