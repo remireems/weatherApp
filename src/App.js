@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import axios from 'axios';
+import axios from 'axios'
+import WTable from './Components/WTable/WTable'
 
 function App() {
 
@@ -34,7 +35,7 @@ function App() {
         />
 
       </div>
-      
+
       <div className='weatherInfo'>
         <h1>{data.name}</h1>
 
@@ -44,6 +45,7 @@ function App() {
 
       </div>
 
+      <WTable />
     </div>
   );
 }
