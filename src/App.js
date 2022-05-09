@@ -34,10 +34,10 @@ function App() {
       </div>
 
       <div className='weatherInfo'>
-        <h1>{data.name}</h1>
-        {data.weather ? <img src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} alt={data.weather[0].main} /> : null}
-        {data.weather ? <h2>{data.weather[0].main}</h2> : null}
-        {data.main ? <h2>{data.main.temp.toFixed()}°F</h2> : null}
+        <h1 className='wName'>{data.name}</h1>
+        {data.weather ? <img className='wImg' src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt={data.weather[0].main} /> : null}
+        {data.weather ? <h2 className='weather'>{data.weather[0].main}</h2> : null}
+        {data.main ? <h2 className='wTemp'>{data.main.temp.toFixed()}°F</h2> : null}
       </div>
   
     </div>
